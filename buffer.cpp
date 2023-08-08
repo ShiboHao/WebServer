@@ -124,7 +124,7 @@ ssize_t Buffer::readFd(int fd, int* Errno) {
     iov[1].iov_base = buff;
     iov[1].iov_len = sizeof(buff);
 
-    const ssize_t len = readv(fd, iov, 2);
+    const ssize_t len = readv(fd, iov, 2); // 分散输入
     if (len < 0) {
         *Errno = errno;
     }
